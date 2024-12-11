@@ -34,41 +34,24 @@
 
             <div class="tasks">
                 <div class="task">
-                    <details>
-                        <summary>
-                            <div class="content"><img src="assets/icons/checked/checked_false.svg" alt="not checked icon">
-                                <h2>Title</h2>
-                                <p>location:</p>
-                                <p>time:time</p>
-                            </div>
-
-                            <div class="tools">
-                                <img src="assets/icons/pen.svg" alt="edit not checked">
-                                <img src="assets/icons/pin.svg" alt="important not checked">
-                            </div>
-                        </summary>
-                        <!-- Skapa ett form ang MVP här -->
-                        <div class="whenwhere">
-                            <img src="assets/icons/calendar_clock.svg" alt="calendar clock">
+                    <div class="content">
+                        <img src="assets/icons/checked/checked_false.svg" alt="not checked icon">
+                        <div class="taskhead">
+                            <h2>Title</h2>
                             <div class="datetime">
-                                <p>Due date</p>
+                                <p>location:</p>
                                 <p>hour:minute</p>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="map">
-                            <img src="assets/icons/map_pin.svg" alt="map pin">
-                            <div class="location">
-                                <p>Location</p>
-                            </div>
-                        </div>
+                    <!-- task description -->
+                    <p>Text</p>
 
-                        <div class="description">
-                            <p>Details...</p>
-                        </div>
-                        <!-- Save = sumbit form -->
-                        <!-- Cancel = cancel form -->
-                    </details>
+                    <div class="tools">
+                        <img src="assets/icons/pen.svg" alt="edit not checked">
+                        <img src="assets/icons/pin.svg" alt="important not checked">
+                    </div>
                 </div>
             </div>
 
