@@ -1,0 +1,19 @@
+@use "color";
+@use "typography";
+
+body {
+    background-color: color.$primary-600;
+    @include typography.body;
+    color: color.$text-primary;
+
+    height: 100vh;
+    display: flex;
+    
+    main {
+        flex-grow: 1;
+        display: flex;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        flex-direction: column;
+    }
+}

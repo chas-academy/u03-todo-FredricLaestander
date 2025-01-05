@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+body {
+  background-color: #313338;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #D9D9D9;
+  height: 100vh;
+  display: flex;
+}
+body main {
+  flex-grow: 1;
+  display: flex;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+header img {
+  width: 2rem;
+}
+@media (min-width: 700px) {
+  header img {
+    display: none;
+  }
+}
+header .text h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+nav {
+  display: none;
+  background-color: #1E1F22;
+  height: 100%;
+  width: 14rem;
+  padding: 2rem 0.5rem 4rem;
+  color: #D9D9D9;
+  flex-direction: column;
+  gap: 1rem;
+}
+nav a {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+nav a:hover {
+  background-color: #2B2D31;
+}
+@media (min-width: 700px) {
+  nav {
+    display: flex;
+  }
+}
+@media (min-width: 1100px) {
+  nav {
+    width: 18rem;
+  }
+}
+@media (min-width: 1500px) {
+  nav {
+    width: 22rem;
+  }
+}
+
+.tasks {
+  flex-grow: 1;
+}
+.tasks .task {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  background-color: #2E3035;
+  border: 1px solid #2B2D31;
+  border-radius: 1rem;
+}
+.tasks .task summary {
+  display: flex;
+  justify-content: space-between;
+}
+.tasks .task summary .content {
+  display: flex;
+  gap: 1rem;
+}
+.tasks .task summary .content .checked {
+  background-image: url("/assets/icons/checked/checked_false.svg");
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.tasks .task summary .content .checked:hover {
+  background-image: url("/assets/icons/checked/checked_hover.svg");
+}
+.tasks .task summary .content .taskhead h2 {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: #D9D9D9;
+}
+.tasks .task summary .content .taskhead .datetime {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #949B9A;
+  display: flex;
+  gap: 0.5rem;
+}
+.tasks .task summary .tools {
+  display: flex;
+  gap: 0.5rem;
+}
+.tasks .task summary .tools .pen {
+  background-image: url("/assets/icons/pen/pen-gray.svg");
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.tasks .task summary .tools .pen:hover {
+  background-image: url("/assets/icons/pen/pen-white.svg");
+}
+.tasks .task summary .tools .pin {
+  background-image: url("/assets/icons/pin/pin-gray.svg");
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.tasks .task summary .tools .pin:hover {
+  background-image: url("/assets/icons/pin/pin-white.svg");
+}
+.tasks .task .description {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #D9D9D9;
+  padding-top: 1rem;
+}
+
+.createtask {
+  background-color: #2E3035;
+  border: 1px solid #2B2D31;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.createtask img {
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+.createtask input {
+  width: 100%;
+  border-radius: 0 0.5rem 0.5rem 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.createtask input::-moz-placeholder {
+  color: #949B9A;
+}
+.createtask input::placeholder {
+  color: #949B9A;
+}/*# sourceMappingURL=styles.css.map */

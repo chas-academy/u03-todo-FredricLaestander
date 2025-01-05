@@ -1,0 +1,79 @@
+@use "color";
+@use "typography";
+
+.tasks {
+  flex-grow: 1;
+  .task {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    background-color: color.$primary-650;
+    border: 1px solid color.$accent-700;
+    border-radius: 1rem;
+
+    summary {
+      display: flex;
+      justify-content: space-between;
+
+      .content {
+        display: flex;
+        gap: 1rem;
+
+        .checked {
+          background-image: url("/assets/icons/checked/checked_false.svg");
+          width: 1.5rem;
+          height: 1.5rem;
+
+          &:hover {
+            background-image: url("/assets/icons/checked/checked_hover.svg");
+          }
+        }
+
+        .taskhead {
+          h2 {
+            @include typography.heading-sm;
+            color: color.$text-primary;
+          }
+
+          .datetime {
+            @include typography.small;
+            color: color.$text-secondary;
+            display: flex;
+            gap: 0.5rem;
+          }
+        }
+      }
+
+      .tools {
+        display: flex;
+        gap: 0.5rem;
+
+        .pen {
+          background-image: url("/assets/icons/pen/pen-gray.svg");
+          width: 1.5rem;
+          height: 1.5rem;
+
+          &:hover {
+            background-image: url("/assets/icons/pen/pen-white.svg");
+          }
+        }
+
+        .pin {
+          background-image: url("/assets/icons/pin/pin-gray.svg");
+          width: 1.5rem;
+          height: 1.5rem;
+
+          &:hover {
+            background-image: url("/assets/icons/pin/pin-white.svg");
+          }
+        }
+      }
+    }
+
+    .description {
+      @include typography.small;
+      color: color.$text-primary;
+      padding-top: 1rem;
+    }
+  }
+}

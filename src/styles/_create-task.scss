@@ -1,0 +1,26 @@
+@use "color";
+@use "typography";
+
+.createtask {
+    background-color: color.$primary-650;
+    border: 1px solid color.$accent-700;
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    
+    img {
+        padding: 0.5rem 0 0.5rem 1rem;
+    }
+
+    input {
+        width: 100%;
+        border-radius: 0 0.5rem 0.5rem 0;
+        border: none;
+        background-color: transparent;
+        outline: none;
+
+        &::placeholder {
+            color: color.$text-secondary;
+        }
+    }
+}
