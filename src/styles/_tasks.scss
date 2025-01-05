@@ -3,13 +3,17 @@
 
 .tasks {
   flex-grow: 1;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+
   .task {
     display: flex;
-    padding: 1rem;
     flex-direction: column;
     background-color: color.$primary-650;
     border: 1px solid color.$accent-700;
     border-radius: 1rem;
+    padding: 1rem;
 
     summary {
       display: flex;
@@ -66,6 +70,12 @@
           &:hover {
             background-image: url("/assets/icons/pin/pin-white.svg");
           }
+        }
+
+        .pin-filled {
+          background-image: url("/assets/icons/pin/pin-white-filled.svg");
+          width: 1.5rem;
+          height: 1.5rem;
         }
       }
     }

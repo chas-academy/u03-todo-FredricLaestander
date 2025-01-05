@@ -96,14 +96,17 @@ nav a:hover {
 
 .tasks {
   flex-grow: 1;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
 .tasks .task {
   display: flex;
-  padding: 1rem;
   flex-direction: column;
   background-color: #2E3035;
   border: 1px solid #2B2D31;
   border-radius: 1rem;
+  padding: 1rem;
 }
 .tasks .task summary {
   display: flex;
@@ -156,6 +159,11 @@ nav a:hover {
 }
 .tasks .task summary .tools .pin:hover {
   background-image: url("/assets/icons/pin/pin-white.svg");
+}
+.tasks .task summary .tools .pin-filled {
+  background-image: url("/assets/icons/pin/pin-white-filled.svg");
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .tasks .task .description {
   font-family: "Outfit", sans-serif;

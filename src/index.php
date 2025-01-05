@@ -1,3 +1,5 @@
+<?php require_once "database.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,27 +39,40 @@
     </header>
 
     <div class="tasks">
+      <?php
+      $query = $db->prepare("SELECT * FROM Tasks");
+      $query->execute();
+      $tasks = $query->fetchAll();
+
+      foreach ($tasks as $task) : 
+      ?>
       <details class="task">
         <summary>
           <div class="content">
             <div class="checked"></div>
             <div class="taskhead">
-              <h2>Title</h2>
+              <h2><?= $task["title"] ?></h2>
               <div class="datetime">
-                <p>location:</p>
-                <p>hour:minute</p>
+                <p><?= $task["location"] ?></p>
+                <p><?= $task["deadline"] ?></p>
               </div>
             </div>
           </div>
 
           <div class="tools">
             <div class="pen"></div>
+            
+            <?php if ($task["important"]) : ?>
+              <div class="pin-filled"></div>
+            <?php else : ?>
             <div class="pin"></div>
+            <?php endif ?>
           </div>
         </summary>
 
-        <p class="description">Text</p>
+        <p class="description"><?= $task["description"] ?></p>
       </details>
+      <?php endforeach; ?>
     </div>
 
     <div class="createtask">
