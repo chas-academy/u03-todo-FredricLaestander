@@ -1,4 +1,4 @@
-<?php require_once "database.php";?>
+<?php require_once "database.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,41 +44,44 @@
       $query->execute();
       $tasks = $query->fetchAll();
 
-      foreach ($tasks as $task) : 
+      foreach ($tasks as $task) :
       ?>
-      <details class="task">
-        <summary>
-          <div class="content">
-            <div class="checked"></div>
-            <div class="taskhead">
-              <h2><?= $task["title"] ?></h2>
-              <div class="datetime">
-                <p><?= $task["location"] ?></p>
-                <p><?= $task["deadline"] ?></p>
+        <details class="task">
+          <summary>
+            <div class="content">
+              <form method="post" action="/actions/toggle-task.php" class="<?= $task["completed"] ? "checked" : "unchecked" ?>">
+                <input type="hidden" name="id" value="<?= $task["id"] ?>" />
+                <button type="submit"></button>
+              </form>
+              <div class="taskhead">
+                <h2 class="<?= $task["completed"] ? "title-checked" : "title-unchecked" ?>"><?= $task["title"] ?></h2>
+                <div class="datetime">
+                  <p><?= $task["location"] ?></p>
+                  <p><?= $task["deadline"] ?></p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="tools">
-            <div class="pen"></div>
-            
-            <?php if ($task["important"]) : ?>
-              <div class="pin-filled"></div>
-            <?php else : ?>
-            <div class="pin"></div>
-            <?php endif ?>
-          </div>
-        </summary>
+            <div class="tools">
+              <div class="pen"></div>
 
-        <p class="description"><?= $task["description"] ?></p>
-      </details>
+              <?php if ($task["important"]) : ?>
+                <div class="pin-filled"></div>
+              <?php else : ?>
+                <div class="pin"></div>
+              <?php endif ?>
+            </div>
+          </summary>
+
+          <p class="description"><?= $task["description"] ?></p>
+        </details>
       <?php endforeach; ?>
     </div>
 
-    <div class="createtask">
+    <form method="post" action="/actions/create-task.php" class="createtask">
       <img src="assets/icons/plus.svg" alt="add task not checked">
-      <input type="text" placeholder="Add an assignment..." name="task" />
-    </div>
+      <input type="text" placeholder="Add an assignment..." name="task" required />
+    </form>
   </main>
 </body>
 

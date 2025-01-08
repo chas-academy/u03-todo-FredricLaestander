@@ -21,6 +21,12 @@ input {
   font-size: inherit;
 }
 
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
 body {
   background-color: #313338;
   font-family: "Outfit", sans-serif;
@@ -107,6 +113,7 @@ nav a:hover {
   border: 1px solid #2B2D31;
   border-radius: 1rem;
   padding: 1rem;
+  cursor: pointer;
 }
 .tasks .task summary {
   display: flex;
@@ -116,13 +123,18 @@ nav a:hover {
   display: flex;
   gap: 1rem;
 }
-.tasks .task summary .content .checked {
+.tasks .task summary .content .unchecked button {
   background-image: url("/assets/icons/checked/checked_false.svg");
   width: 1.5rem;
   height: 1.5rem;
 }
-.tasks .task summary .content .checked:hover {
+.tasks .task summary .content .unchecked button:hover {
   background-image: url("/assets/icons/checked/checked_hover.svg");
+}
+.tasks .task summary .content .checked button {
+  background-image: url("/assets/icons/checked/checked_true.svg");
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .tasks .task summary .content .taskhead h2 {
   font-family: "Outfit", sans-serif;
@@ -130,6 +142,10 @@ nav a:hover {
   line-height: 1.5rem;
   font-weight: 500;
   color: #D9D9D9;
+}
+.tasks .task summary .content .taskhead .title-checked {
+  text-decoration: line-through;
+  color: #949B9A;
 }
 .tasks .task summary .content .taskhead .datetime {
   font-family: "Outfit", sans-serif;
