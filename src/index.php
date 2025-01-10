@@ -11,22 +11,8 @@
 </head>
 
 <body>
-  <aside>
-    <nav>
-      <!-- sökfält för att söka efter task rubriker -->
-      <a href="">
-        <img src="assets/icons/sun.svg" alt="sun">My day
-      </a>
-      <a href=""><img src="assets/icons/calendar.svg" alt="calendar">Scheduled plans
-      </a>
-      <a href="">
-        <img src="assets/icons/pin/pin-blue.svg" alt="pin">Important
-      </a>
-      <a href="">
-        <img src="assets/icons/folder.svg" alt="folder">All assignements
-      </a>
-    </nav>
-  </aside>
+
+  <?php require_once __DIR__ . "/components/sidebar.php"; ?>
 
   <main>
     <header>
@@ -57,13 +43,15 @@
                 <h2 class="<?= $task["completed"] ? "title-checked" : "title-unchecked" ?>"><?= $task["title"] ?></h2>
                 <div class="datetime">
                   <p><?= $task["location"] ?></p>
-                  <p><?= $task["deadline"] ?></p>
+                  <p><?= $task["date"] ?></p>
+                  <p><?= $task["time"] ?></p>
                 </div>
               </div>
             </div>
 
             <div class="tools">
-              <div class="pen"></div>
+              <a href="/edit-task.php?task=<?= $task['id']?>" class="pen">
+              </a>
 
               <?php if ($task["important"]) : ?>
                 <div class="pin-filled"></div>

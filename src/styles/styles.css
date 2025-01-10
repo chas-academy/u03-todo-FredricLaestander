@@ -34,7 +34,8 @@ body {
   line-height: 1.5rem;
   font-weight: 400;
   color: #D9D9D9;
-  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
 }
 body main {
