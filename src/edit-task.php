@@ -23,14 +23,14 @@ $task = $query->fetch();
 
   <main class="edit">
 
-    <form method="post" class="task" action="/actions/update-task.php">
+    <form method="post" class="task" action="/actions/update-delete-task.php">
       <input type="hidden" name="id" value="<?= $task['id'] ?>">
 
       <div class="task-head">
         <input type="text" name="task" placeholder="Title" value="<?= $task["title"] ?>" />
 
         <div class="tools">
-          <div class="trash-can"></div>
+          <button type="submit" name="function" value="delete" class="trash-can"></button>
 
           <?php if ($task["important"]) : ?>
             <div class="pin-filled"></div>
@@ -55,7 +55,7 @@ $task = $query->fetch();
 
       <div class="buttons">
         <a href="/">Cancel</a>
-        <button type="submit">Save</button>
+        <button type="submit" name="function" value="save">Save</button>
       </div>
     </form>
   </main>
