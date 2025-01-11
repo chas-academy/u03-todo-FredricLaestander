@@ -24,6 +24,8 @@ $task = $query->fetch();
   <main class="edit">
 
     <form method="post" class="task" action="/actions/update-task.php">
+      <input type="hidden" name="id" value="<?= $task['id'] ?>">
+
       <div class="task-head">
         <input type="text" name="task" placeholder="Title" value="<?= $task["title"] ?>" />
 

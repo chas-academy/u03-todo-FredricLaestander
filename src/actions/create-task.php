@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../database.php";
 
-if($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $taskName = htmlspecialchars($_POST["task"]);
 
   $sql = "INSERT INTO Tasks (title) VALUES (:title)";

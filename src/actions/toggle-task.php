@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../database.php";
 
-if($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $taskId = htmlspecialchars($_POST["id"]);
 
   $sql = "UPDATE Tasks SET completed = !completed WHERE id = :id";

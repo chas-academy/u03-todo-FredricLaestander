@@ -53,9 +53,10 @@
 
           .date-time {
             @include typography.small;
-            color: color.$text-secondary;
+            gap: 0 0.5rem;
             display: flex;
-            gap: 0.5rem;
+            color: color.$text-secondary;
+            flex-wrap: wrap;
           }
         }
       }
