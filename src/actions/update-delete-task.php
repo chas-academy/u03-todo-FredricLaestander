@@ -15,9 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $taskId = htmlspecialchars($_POST["id"]);
         $taskTitle = htmlspecialchars($_POST["task"]);
-        $taskDate = htmlspecialchars($_POST["date"]);
-        $taskTime = htmlspecialchars($_POST["time"]);
+        $taskDate = empty(htmlspecialchars($_POST["date"])) ? null : htmlspecialchars($_POST["date"]);
+        $taskTime = empty(htmlspecialchars($_POST["time"])) ? null : htmlspecialchars($_POST["time"]);
         $taskDescription = htmlspecialchars($_POST["description"]);
+
+        if ($taskDate === null && $taskTime) {
+            $taskDate = date("Y-m-d");
+        }
 
         $sql = "UPDATE Tasks SET title = :task, date = :date, time = :time, description = :details WHERE id = :id";
 

@@ -19,14 +19,14 @@
             <img src="assets/icons/menu.svg" alt="menu">
 
             <div class="text">
-                <h1>Headline here</h1>
+                <h1>My day</h1>
                 <p><?php echo date("F j, l") ?></p>
             </div>
         </header>
 
         <div class="tasks">
             <?php
-            $query = $db->prepare("SELECT * FROM Tasks");
+            $query = $db->prepare("SELECT * FROM Tasks WHERE date = CURRENT_DATE");
             $query->execute();
             $tasks = $query->fetchAll();
 
