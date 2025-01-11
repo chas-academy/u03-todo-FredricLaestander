@@ -1,0 +1,52 @@
+@use "../color";
+@use "../typography";
+
+.task {
+  display: flex;
+  flex-direction: column;
+  background-color: color.$primary-650;
+  border: 1px solid color.$accent-700;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  .tools {
+    display: flex;
+    gap: 0.5rem;
+
+    .pen {
+      background-image: url("/assets/icons/pen/pen-gray.svg");
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &:hover {
+        background-image: url("/assets/icons/pen/pen-white.svg");
+      }
+    }
+
+    .trash-can {
+      background-image: url("/assets/icons/trash-can/trash-can-grey.svg");
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &:hover {
+        background-image: url("/assets/icons/trash-can/trash-can-white.svg");
+      }
+    }
+
+    .pin {
+      background-image: url("/assets/icons/pin/pin-gray.svg");
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &:hover {
+        background-image: url("/assets/icons/pin/pin-white.svg");
+      }
+    }
+
+    .pin-filled {
+      background-image: url("/assets/icons/pin/pin-white-filled.svg");
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}

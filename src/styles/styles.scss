@@ -1,6 +1,8 @@
 @use "reset";
 @use "base";
-@use "header";
-@use "navbar";
-@use "tasks";
-@use "create-task"
+@use "components/header";
+@use "components/navbar";
+@use "components/task";
+@use "components/create-task";
+@use "pages/start";
+@use "pages/edit";

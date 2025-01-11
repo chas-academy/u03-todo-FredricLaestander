@@ -24,9 +24,9 @@ $task = $query->fetch();
   <main class="edit">
 
     <form method="post" class="task" action="/actions/update-task.php">
-      <!-- okej h2 ser bra ut men jag vill inte att texten ska vara överstruken om man vill edita ett färdigt task.. -->
       <div class="task-head">
         <input type="text" name="task" placeholder="Title" value="<?= $task["title"] ?>" />
+
         <div class="tools">
           <div class="trash-can"></div>
 
@@ -46,10 +46,10 @@ $task = $query->fetch();
 
       <div class="location">
         <img src="/assets/icons/map-pin.svg" alt="Map pin">
-        <input type="text" name="location" value="<?= $task["location"] ?>">
+        <input type="text" name="location" placeholder="Location" value="<?= $task["location"] ?>">
       </div>
 
-      <textarea name="description" rows="4" class="description"><?= $task["description"] ?></textarea>
+      <textarea name="description" rows="4" placeholder="Details" class="description"><?= $task["description"] ?></textarea>
 
       <div class="buttons">
         <a href="/">Cancel</a>
