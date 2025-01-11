@@ -50,14 +50,12 @@
                         </div>
 
                         <div class="tools">
-                            <a href="/edit-task.php?task=<?= $task['id'] ?>" class="pen">
-                            </a>
+                            <a href="/edit-task.php?task=<?= $task['id'] ?>" class="pen"></a>
 
-                            <?php if ($task["important"]) : ?>
-                                <div class="pin-filled"></div>
-                            <?php else : ?>
-                                <div class="pin"></div>
-                            <?php endif ?>
+                            <form method="post" action="/actions/important-task.php" class="<?= $task["important"] ? "pin-filled" : "pin" ?>">
+                                <input type="hidden" name="id" value="<?= $task["id"] ?>" />
+                                <button type="submit"></button>
+                            </form>
                         </div>
                     </summary>
 

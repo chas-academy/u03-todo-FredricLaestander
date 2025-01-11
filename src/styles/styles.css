@@ -132,15 +132,15 @@ nav a:hover {
 .task .tools .trash-can:hover {
   background-image: url("/assets/icons/trash-can/trash-can-white.svg");
 }
-.task .tools .pin {
+.task .tools .pin button {
   background-image: url("/assets/icons/pin/pin-gray.svg");
   width: 1.5rem;
   height: 1.5rem;
 }
-.task .tools .pin:hover {
+.task .tools .pin button:hover {
   background-image: url("/assets/icons/pin/pin-white.svg");
 }
-.task .tools .pin-filled {
+.task .tools .pin-filled button {
   background-image: url("/assets/icons/pin/pin-white-filled.svg");
   width: 1.5rem;
   height: 1.5rem;
