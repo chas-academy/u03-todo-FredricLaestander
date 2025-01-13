@@ -9,7 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $statement = $db->prepare($sql);
     $statement->execute([":id" => $taskId]);
-    header("Location: /");
+
+    $previousUrl = $_SERVER["HTTP_REFERER"] ?? "/";
+    header("Location: $previousUrl");
 } else {
     header("Location: /");
 }

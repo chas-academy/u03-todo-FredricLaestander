@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             ":time" => $taskTime,
             ":details" => $taskDescription
         ]);
-        header("Location: /");
+        $previousUrl = $_SERVER["HTTP_REFERER"] ?? "/";
+        header("Location: $previousUrl");
     } else {
         header("Location: /");
     }
