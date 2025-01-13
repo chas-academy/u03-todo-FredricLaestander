@@ -51,10 +51,22 @@ require_once "actions/filter-page.php";
 
         <div class="tasks">
             <?php
-            if (isset($_GET["page"]) && $_GET["page"] === "all-assignments") {
-                $tasks = getAllAssignments();
-            } else {
-                $tasks = getMyDay();
+
+            switch ($page) {
+                case "scheduled-plans":
+                    $tasks = getScheduledPlans();
+                    break;
+
+                case "important":
+                    $tasks = getImportant();
+                    break;
+
+                case "all-assignments":
+                    $tasks = getAllAssignments();
+                    break;
+
+                default:
+                    $tasks = getMyDay();
             }
 
             foreach ($tasks as $task) :
