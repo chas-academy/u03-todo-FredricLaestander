@@ -88,6 +88,9 @@ nav a {
 nav a:hover {
   background-color: #2b2d31;
 }
+nav a.active {
+  background-color: #2b2d31;
+}
 @media (min-width: 700px) {
   nav {
     display: flex;
