@@ -1,4 +1,7 @@
-<?php require_once "database.php"; ?>
+<?php
+require_once "database.php";
+require_once "actions/filter-page.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,16 +22,40 @@
             <img src="assets/icons/menu.svg" alt="menu">
 
             <div class="text">
-                <h1>My day</h1>
+                <h1>
+                    <?php
+
+                    $page = isset($_GET["page"]) ? $_GET["page"] : null;
+
+                    switch ($page) {
+                        case "scheduled-plans":
+                            echo "Scheduled plans";
+                            break;
+
+                        case "important":
+                            echo "Important";
+                            break;
+
+                        case "all-assignments":
+                            echo "All assignments";
+                            break;
+
+                        default:
+                            echo "My day";
+                    }
+                    ?>
+                </h1>
                 <p><?php echo date("F j, l") ?></p>
             </div>
         </header>
 
         <div class="tasks">
             <?php
-            $query = $db->prepare("SELECT * FROM Tasks WHERE date = CURRENT_DATE");
-            $query->execute();
-            $tasks = $query->fetchAll();
+            if (isset($_GET["page"]) && $_GET["page"] === "all-assignments") {
+                $tasks = getAllAssignments();
+            } else {
+                $tasks = getMyDay();
+            }
 
             foreach ($tasks as $task) :
             ?>
