@@ -12,6 +12,22 @@
   .task {
     cursor: pointer;
 
+    &.unchecked .content button {
+      background-image: url("/assets/icons/checked/checked_false.svg");
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &:hover {
+        background-image: url("/assets/icons/checked/checked_hover.svg");
+      }
+    }
+
+    &.checked .content button {
+      background-image: url("/assets/icons/checked/checked_true.svg");
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
     summary {
       display: flex;
       justify-content: space-between;
@@ -24,29 +40,13 @@
         display: flex;
         gap: 1rem;
 
-        .unchecked button {
-          background-image: url("/assets/icons/checked/checked_false.svg");
-          width: 1.5rem;
-          height: 1.5rem;
-
-          &:hover {
-            background-image: url("/assets/icons/checked/checked_hover.svg");
-          }
-        }
-
-        .checked button {
-          background-image: url("/assets/icons/checked/checked_true.svg");
-          width: 1.5rem;
-          height: 1.5rem;
-        }
-
         .task-head {
           h2 {
             @include typography.heading-sm;
             color: color.$text-primary;
           }
 
-          .title-checked {
+          h2.title-checked {
             text-decoration: line-through;
             color: color.$text-secondary;
           }
@@ -60,12 +60,16 @@
           }
         }
       }
+    }
 
-      .description {
-        @include typography.small;
-        color: color.$text-primary;
-        padding-top: 1rem;
-      }
+    .description {
+      @include typography.small;
+    }
+
+    &.checked .description {
+      @include typography.small;
+      color: color.$text-secondary;
+      text-decoration: line-through;
     }
   }
 }

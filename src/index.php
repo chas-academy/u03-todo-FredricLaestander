@@ -71,10 +71,10 @@ require_once "actions/filter-page.php";
 
             foreach ($tasks as $task) :
             ?>
-                <details class="task">
+                <details class="task <?= $task["completed"] ? "checked" : "unchecked" ?>">
                     <summary>
                         <div class="content">
-                            <form method="post" action="/actions/toggle-task.php" class="<?= $task["completed"] ? "checked" : "unchecked" ?>">
+                            <form method="post" action="/actions/toggle-task.php">
                                 <input type="hidden" name="id" value="<?= $task["id"] ?>" />
                                 <button type="submit"></button>
                             </form>

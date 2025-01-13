@@ -182,6 +182,19 @@ nav a.active {
 .start .task {
   cursor: pointer;
 }
+.start .task.unchecked .content button {
+  background-image: url("/assets/icons/checked/checked_false.svg");
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.start .task.unchecked .content button:hover {
+  background-image: url("/assets/icons/checked/checked_hover.svg");
+}
+.start .task.checked .content button {
+  background-image: url("/assets/icons/checked/checked_true.svg");
+  width: 1.5rem;
+  height: 1.5rem;
+}
 .start .task summary {
   display: flex;
   justify-content: space-between;
@@ -193,19 +206,6 @@ nav a.active {
   display: flex;
   gap: 1rem;
 }
-.start .task summary .content .unchecked button {
-  background-image: url("/assets/icons/checked/checked_false.svg");
-  width: 1.5rem;
-  height: 1.5rem;
-}
-.start .task summary .content .unchecked button:hover {
-  background-image: url("/assets/icons/checked/checked_hover.svg");
-}
-.start .task summary .content .checked button {
-  background-image: url("/assets/icons/checked/checked_true.svg");
-  width: 1.5rem;
-  height: 1.5rem;
-}
 .start .task summary .content .task-head h2 {
   font-family: "Outfit", sans-serif;
   font-size: 1rem;
@@ -213,7 +213,7 @@ nav a.active {
   font-weight: 500;
   color: #d9d9d9;
 }
-.start .task summary .content .task-head .title-checked {
+.start .task summary .content .task-head h2.title-checked {
   text-decoration: line-through;
   color: #949b9a;
 }
@@ -227,13 +227,19 @@ nav a.active {
   color: #949b9a;
   flex-wrap: wrap;
 }
-.start .task summary .description {
+.start .task .description {
   font-family: "Outfit", sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400;
-  color: #d9d9d9;
-  padding-top: 1rem;
+}
+.start .task.checked .description {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: #949b9a;
+  text-decoration: line-through;
 }
 
 .edit {
