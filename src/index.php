@@ -102,8 +102,7 @@ require_once "actions/filter-page.php";
                 </details>
             <?php endforeach; ?>
         </div>
-
-        <form method="post" action="/actions/create-task.php" class="createtask">
+        <form method="post" action="/actions/create-task.php?page=<?= $page ?>" class="createtask">
             <img src="assets/icons/plus.svg" alt="add task not checked">
             <input type="text" placeholder="Add an assignment..." name="task" required />
         </form>

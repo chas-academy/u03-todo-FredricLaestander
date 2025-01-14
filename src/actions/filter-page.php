@@ -31,7 +31,7 @@ function getScheduledPlans()
     global $db;
     $query = $db->prepare("
     SELECT * FROM Tasks
-    WHERE date >= CURRENT_DATE + INTERVAL 1 DAY 
+    WHERE date IS NOT NULL
     ORDER BY date ASC, 
         CASE 
             WHEN time IS NULL THEN 1 

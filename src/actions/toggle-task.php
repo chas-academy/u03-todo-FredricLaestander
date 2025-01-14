@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   $previousUrl = $_SERVER["HTTP_REFERER"] ?? "/";
 
-  header("Location: $previousUrl");;
+  header("Location: $previousUrl");
 } else {
   header("Location: /");
 }
