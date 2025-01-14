@@ -179,45 +179,66 @@ nav a.active {
   gap: 1rem;
   flex-direction: column;
 }
-.start .task {
+.start main {
+  display: flex;
+  flex-direction: column;
+}
+.start main .tasks {
+  display: flex;
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding-right: 0.5rem;
+}
+.start main .tasks::-webkit-scrollbar {
+  width: 0.75rem;
+}
+.start main .tasks::-webkit-scrollbar-track {
+  background: #42444a;
+  border-radius: 0.5rem;
+}
+.start main .tasks::-webkit-scrollbar-thumb {
+  background: #1e1f22;
+  border-radius: 0.5rem;
+}
+.start main .tasks .task {
   cursor: pointer;
 }
-.start .task.unchecked .content button {
+.start main .tasks .task.unchecked .content button {
   background-image: url("/assets/icons/checked/checked_false.svg");
   width: 1.5rem;
   height: 1.5rem;
 }
-.start .task.unchecked .content button:hover {
+.start main .tasks .task.unchecked .content button:hover {
   background-image: url("/assets/icons/checked/checked_hover.svg");
 }
-.start .task.checked .content button {
+.start main .tasks .task.checked .content button {
   background-image: url("/assets/icons/checked/checked_true.svg");
   width: 1.5rem;
   height: 1.5rem;
 }
-.start .task summary {
+.start main .tasks .task summary {
   display: flex;
   justify-content: space-between;
 }
-.start .task summary::-webkit-details-marker {
+.start main .tasks .task summary::-webkit-details-marker {
   display: none;
 }
-.start .task summary .content {
+.start main .tasks .task summary .content {
   display: flex;
   gap: 1rem;
 }
-.start .task summary .content .task-head h2 {
+.start main .tasks .task summary .content .task-head h2 {
   font-family: "Outfit", sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 500;
   color: #d9d9d9;
 }
-.start .task summary .content .task-head h2.title-checked {
+.start main .tasks .task summary .content .task-head h2.title-checked {
   text-decoration: line-through;
   color: #949b9a;
 }
-.start .task summary .content .task-head .date-time {
+.start main .tasks .task summary .content .task-head .date-time {
   font-family: "Outfit", sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -227,22 +248,22 @@ nav a.active {
   color: #949b9a;
   flex-wrap: wrap;
 }
-.start .task summary .content .task-head .date-time p.today {
+.start main .tasks .task summary .content .task-head .date-time p.today {
   color: #d9d9d9;
 }
-.start .task summary .content .task-head .date-time p.yesterday {
+.start main .tasks .task summary .content .task-head .date-time p.yesterday {
   color: #f6aea9;
 }
-.start .task summary .content .task-head .date-time p.tomorrow {
+.start main .tasks .task summary .content .task-head .date-time p.tomorrow {
   color: #aecbfa;
 }
-.start .task .description {
+.start main .tasks .task .description {
   font-family: "Outfit", sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400;
 }
-.start .task.checked .description {
+.start main .tasks .task.checked .description {
   font-family: "Outfit", sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
