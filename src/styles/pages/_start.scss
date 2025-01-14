@@ -57,6 +57,18 @@
             display: flex;
             color: color.$text-secondary;
             flex-wrap: wrap;
+
+            p.today {
+              color: color.$white;
+            }
+
+            p.yesterday {
+              color: color.$chimp-red;
+            }
+
+            p.tomorrow {
+              color: color.$chimp-blue;
+            }
           }
         }
       }

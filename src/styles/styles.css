@@ -227,6 +227,15 @@ nav a.active {
   color: #949b9a;
   flex-wrap: wrap;
 }
+.start .task summary .content .task-head .date-time p.today {
+  color: #d9d9d9;
+}
+.start .task summary .content .task-head .date-time p.yesterday {
+  color: #f6aea9;
+}
+.start .task summary .content .task-head .date-time p.tomorrow {
+  color: #aecbfa;
+}
 .start .task .description {
   font-family: "Outfit", sans-serif;
   font-size: 1rem;

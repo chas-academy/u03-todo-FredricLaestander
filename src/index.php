@@ -1,6 +1,7 @@
 <?php
 require_once "database.php";
-require_once "actions/filter-page.php";
+require_once "functions/filter-page.php";
+require_once "functions/format-date.php";
 ?>
 
 <!DOCTYPE html>
@@ -81,8 +82,15 @@ require_once "actions/filter-page.php";
                             <div class="task-head">
                                 <h2 class="<?= $task["completed"] ? "title-checked" : "title-unchecked" ?>"><?= $task["title"] ?></h2>
                                 <div class="date-time">
-                                    <p><?= $task["location"] ?></p>
-                                    <p><?= $task["date"] ?></p>
+                                    <?php if (isset($task["location"])) : ?>
+                                        <p><?= $task["location"] ?></p>
+                                    <?php endif; ?>
+
+                                    <?php if (isset($task["date"])) : ?>
+                                        <p class="<?= formatDate($task["date"])["class"] ?>">
+                                            <?= formatDate($task["date"])["text"]; ?>
+                                        </p>
+                                    <?php endif; ?>
                                     <p><?= $task["time"] ?></p>
                                 </div>
                             </div>
