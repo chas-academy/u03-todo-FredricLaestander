@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $statement->execute(["id" => $taskId]);
         header("Location: /");
     } elseif ($_POST["function"] === "save") {
-
         $taskId = htmlspecialchars($_POST["id"]);
         $taskTitle = htmlspecialchars($_POST["task"]);
         $taskLocation = htmlspecialchars($_POST["location"]);

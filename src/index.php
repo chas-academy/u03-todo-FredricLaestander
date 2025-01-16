@@ -71,7 +71,7 @@ require_once "functions/format-date.php";
             }
 
             foreach ($tasks as $task) :
-            ?>
+                ?>
                 <details class="task <?= $task["completed"] ? "checked" : "unchecked" ?>">
                     <summary>
                         <div class="content">
