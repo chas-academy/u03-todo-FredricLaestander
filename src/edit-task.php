@@ -58,8 +58,7 @@ $task = $query->fetch();
         rows="4" 
         placeholder="Details" 
         value="<?= $task["description"] ?>"
-        class="description"><?= $task["description"] ?>
-      </textarea>
+        class="description"><?= $task["description"] ?></textarea>
 
       <div class="buttons">
         <a href="/">Cancel</a>
