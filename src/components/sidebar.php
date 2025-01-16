@@ -18,7 +18,7 @@ $activePage = isset($_GET["page"]) ? $_GET["page"] : null;
     </a>
 
     <a href="/?page=all-assignments" class="<?= $activePage === "all-assignments" ? 'active' : '' ?>">
-      <img src="assets/icons/folder.svg" alt="folder">All assignements
+      <img src="assets/icons/folder.svg" alt="folder">All assignments
     </a>
   </nav>
 </aside>
