@@ -5,6 +5,8 @@ $query = $db->prepare("SELECT * FROM Tasks WHERE id = :id");
 $query->execute([":id" => $_GET["task"]]);
 $task = $query->fetch();
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -55,8 +57,8 @@ $task = $query->fetch();
         name="description"
         rows="4" 
         placeholder="Details" 
-        class="description">
-        <?= $task["description"] ?>
+        value="<?= $task["description"] ?>"
+        class="description"><?= $task["description"] ?>
       </textarea>
 
       <div class="buttons">
