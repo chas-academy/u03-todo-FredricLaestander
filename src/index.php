@@ -80,7 +80,9 @@ require_once "functions/format-date.php";
                                 <button type="submit"></button>
                             </form>
                             <div class="task-head">
-                                <h2 class="<?= $task["completed"] ? "title-checked" : "title-unchecked" ?>"><?= $task["title"] ?></h2>
+                                <h2 class="<?= $task["completed"] ? "title-checked" : "title-unchecked" ?>">
+                                    <?= $task["title"] ?>
+                                </h2>
                                 <div class="date-time">
                                     <?php if (isset($task["location"])) : ?>
                                         <p><?= $task["location"] ?></p>
@@ -99,7 +101,10 @@ require_once "functions/format-date.php";
                         <div class="tools">
                             <a href="/edit-task.php?task=<?= $task['id'] ?>" class="pen"></a>
 
-                            <form method="post" action="/actions/important-task.php" class="<?= $task["important"] ? "pin-filled" : "pin" ?>">
+                            <form
+                                method="post"
+                                action="/actions/important-task.php"
+                                class="<?= $task["important"] ? "pin-filled" : "pin" ?>">
                                 <input type="hidden" name="id" value="<?= $task["id"] ?>" />
                                 <button type="submit"></button>
                             </form>

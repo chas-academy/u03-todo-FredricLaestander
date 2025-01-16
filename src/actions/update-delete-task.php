@@ -23,7 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $taskDate = date("Y-m-d");
         }
 
-        $sql = "UPDATE Tasks SET title = :task, location = :location, date = :date, time = :time, description = :details WHERE id = :id";
+        $sql = "UPDATE Tasks SET title = :task, 
+            location = :location,
+            date = :date, time = :time,
+            description = :details
+            WHERE id = :id";
 
         $statement = $db->prepare($sql);
         $statement->execute([

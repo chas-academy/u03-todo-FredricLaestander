@@ -51,7 +51,13 @@ $task = $query->fetch();
         <input type="text" name="location" placeholder="Location" value="<?= $task["location"] ?>">
       </div>
 
-      <textarea name="description" rows="4" placeholder="Details" class="description"><?= $task["description"] ?></textarea>
+      <textarea
+        name="description"
+        rows="4" 
+        placeholder="Details" 
+        class="description">
+        <?= $task["description"] ?>
+      </textarea>
 
       <div class="buttons">
         <a href="/">Cancel</a>
